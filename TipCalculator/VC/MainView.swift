@@ -24,7 +24,6 @@ class MainView: UIView {
         setupConstraints()
     }
     
-    
     func setupViews() {
         backgroundColor = .black
         appLabel.textColor = .white
@@ -43,8 +42,6 @@ class MainView: UIView {
         spliLabel.textColor = .white
         percentageLabel.textColor = .white
         resultLabel.textColor = .white
-        
-        
     }
     
     func setupConstraints() {
@@ -55,16 +52,10 @@ class MainView: UIView {
         addSubview(appLabel)
         addSubview(billStack)
         addSubview(percentStack)
-        
         addSubview(resultLabel)
         addSubview(spliStack)
-        
-        
-        
-        
-        
+  
         Helper.tamicOff(views: [appLabel,billStack,percentStack,resultLabel,spliStack])
-        
         
         NSLayoutConstraint.activate([appLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
                                      appLabel.topAnchor.constraint(equalTo: topAnchor, constant: 120),
@@ -82,14 +73,8 @@ class MainView: UIView {
                                      bilTf.heightAnchor.constraint(equalToConstant: 40),
                                      resultLabel.topAnchor.constraint(equalTo: spliStack.bottomAnchor, constant: 48),
                                      resultLabel.leadingAnchor.constraint(equalTo: billStack.leadingAnchor)])
-        
     }
-    
-    
-    
-    
-    
-    
+  
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

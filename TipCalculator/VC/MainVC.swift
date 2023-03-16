@@ -15,14 +15,9 @@ class MainViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         self.view = mainView
         mainView.bilTf.delegate = self
-      
-        
         addTargets()
-        
     }
-    
-    
-    
+
     func addTargets() {
         mainView.slider.addTarget(self, action: #selector(getPercent), for: .touchUpInside)
         mainView.spliSlider.addTarget(self, action: #selector(getSplit), for: .touchUpInside)
@@ -40,21 +35,14 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     }
     
      func getTip() {
-    
         let doubleBill = Double(mainView.bilTf.text!) ?? 0
         let splitValue = Int(mainView.spliSlider.value)
         let tipMary = (Int(doubleBill) / 100) * Int(mainView.slider.value)
-        
         let tipM = tipMary / splitValue
-
-        
         mainView.resultLabel.text = "Each tip \(tipM)"
-        
-        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
         let aSet = NSCharacterSet(charactersIn:".0123456789").inverted
         let compSepByCharInSet = string.components(separatedBy: aSet)
         let numberFiltered = compSepByCharInSet.joined(separator: "")
